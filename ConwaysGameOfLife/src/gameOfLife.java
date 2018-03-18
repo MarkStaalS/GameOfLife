@@ -3,26 +3,26 @@ import java.util.Map;
 
 public class gameOfLife {
 	public static void main(String args[]) {
-		//Skaber vores map/grid
+		//Creating hashmap: grid
 		Map<String ,String> grid = new HashMap<String,String>();
 		Map<String ,String> next_grid = new HashMap<String,String>();
 		//gameloop run time
 		int run_time = 30000;
-		//støørelse på sider af grid
+		//Size of the grid
 		int s = 37;
-		//naboer
+		//Neighbouring cells
 		int nb = 0;
 		//sleep time
 		int t = 150;
-		//løber genne y koordinater
+		//Running throught y coordinates
 		for(int y =0; y< s; y++){
-			//Løber gennem x koordinater, når den er løbet gennem hele rækken gå vi en gang ned i y rækken
+			//Runs through x when finnished with y
 			for(int x=0; x<s;x++) {
-				//Setter pågældene felt til "_"
+				//Setting fields to (dead) "_"
 				grid.put(gameOfLife.conv(x, y), "_ ");
 			}
 		}
-		//Befolk
+		//Populate withe one of the following "patterns"
 		//gameOfLife.Glider(grid);
 		gameOfLife.GosperGliderGun(grid);
 		//gameOfLife.Beacon(grid);
